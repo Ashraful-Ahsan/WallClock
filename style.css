@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #ffffff
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #212121;
+}
+
+
+.container{
+    position: relative;
+}
+
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(208, 255, 0, 0.25);
+    box-shadow: 0px 0px 400px rgba(117, 253, 169, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg*var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 20px;
+
+}
+
+.clock::before{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 333;
+}
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.hand i{
+    position: absolute;
+    background-color:var(--clr);
+    width: 4px;
+    height: var(--h1);
+    border-radius: 8px;
+
+}
+
+.AhsaniT{
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #0cfcfc;
+    font-size: 16px;
+}
+
+/* Media queries for tablet screens */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .clock {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .clock span b {
+      font-size: 16px;
+    }
+    
+    .hand i {
+      width: 2px;
+    }
+  }
+  
+
+  /* Media queries for mobile screens */
+@media only screen and (max-width: 767px) {
+    .clock {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .clock span b {
+      font-size: 16px;
+    }
+  
+    .hand i {
+      --ratio: 0.5; /* Adjust the ratio value as per your preference */
+      width: calc(4px * var(--ratio));
+    }
+  
+    .AhsaniT {
+      font-size: 14px;
+    }
+  }
